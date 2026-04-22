@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SIIX EnMMS - {{ $pageTitle ?? '' }}</title>
+<title>Cybermate - {{ $pageTitle ?? '' }}</title>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- Google Font: Source Sans Pro -->
@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
 <!-- Font Awesome -->
-<link rel="icon" type="image/x-icon" href="{{ asset('assets/images/siix-logo.png')}}">
+<link rel="icon" type="image/x-icon" href="{{ asset('assets/images/cybermate-logo.png')}}">
 <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
