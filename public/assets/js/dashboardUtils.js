@@ -93,8 +93,6 @@ export const renderChart = (chartID, config) => {
     charts[chartID] = new CanvasJS.Chart(chartID, config);
     charts[chartID].render();
 
-    console.log(config)
-
     if (charts[chartID].get("exportEnabled")) {
         const toolbarClass = $(`#${chartID}`).find('.canvasjs-chart-toolbar')[0];
 

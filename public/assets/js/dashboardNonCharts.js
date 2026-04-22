@@ -1,9 +1,9 @@
-import { createOdometer, formatDate, setIntervalAtFiveMinuteMarks, getStartEndDate } from './dashboardUtils.js?v=10';
+import { createOdometer, formatDate, setIntervalAtFiveMinuteMarks, getStartEndDate } from './dashboardUtils.js?v=11';
 
 const DEFAULT_WHERE_IN = [
     {
         field: 'sensor_id',
-        value: [15, 19],
+        value: [1, 2, 3],
     },
 ];
 
@@ -21,12 +21,13 @@ const fetchEnergyConsumption = (select, startDate, endDate, whereIn = DEFAULT_WH
 };
 
 const fetchDataNonCharts = (select, startDate, endDate, divId) => {
+    console.log('test');
     if (divId === 'currentDayEnergyConsumption') {
         fetchEnergyConsumption(select, startDate, endDate)
             .done((data) => {
                 const currentDay = data[0] || { daily_consumption: 0 };
                 const totalEnergyConsumptionValue = document.getElementById('currentDayEnergyConsumptionValue');
-                createOdometer(totalEnergyConsumptionValue, (currentDay.daily_consumption ?? 0).toLocaleString());
+                // createOdometer(totalEnergyConsumptionValue, (currentDay.daily_consumption ?? 0).toLocaleString());
 
                 $('#ghgCurrentDayValue').html(`${Number((currentDay.daily_consumption * 0.512).toFixed(2)).toLocaleString()} kWh`);
                 $('#ghgCurrentDay').css('width', (currentDay.daily_consumption * 0.512).toFixed(2));

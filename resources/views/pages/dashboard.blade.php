@@ -156,5 +156,6 @@
         <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
         {{-- <script type="module" src="{{ asset('assets/js/dashboard.js') }}?v={{ time() }}"></script> --}}
         <script type="module" src="{{ asset('assets/js/dashboardCharts.js') }}?v={{ time() }}"></script>
+        <script type="module" src="{{ asset('assets/js/dashboardNonCharts.js') }}?v={{ time() }}"></script>
     @endsection
 </x-app-layout>

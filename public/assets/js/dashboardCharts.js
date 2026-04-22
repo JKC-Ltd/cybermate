@@ -1,4 +1,4 @@
-import { setIntervalAtFiveMinuteMarks, charts, fetchData, colorScheme, formatDate, renderChart, getStartEndDate } from './dashboardUtils.js?v=10';
+import { setIntervalAtFiveMinuteMarks, charts, fetchData, colorScheme, formatDate, renderChart, getStartEndDate } from './dashboardUtils.js?v=11';
 
 colorScheme();
 const processChartData = (rows, shouldRefetch, chartId, seriesTemplate, labelField) => {
@@ -66,7 +66,6 @@ const processPandPEnergyConsumption = () => {
             { field: 'sensor_id', value: [1, 2,3] },
         ],
     };
-    // console.log(requestPayload);
 
     const createChartOptions = () => ({
         exportEnabled: true,
@@ -165,7 +164,6 @@ const processDailyEnergyConsumption = () => {
     charts[CHART_ID] = { options: createChartOptions() };
     fetchData(requestPayload, createSeriesTemplate(), CHART_ID, PROCESS_URL, LABEL_FIELD, aggregatedProcessFn);
 };
-// console.log(processDailyEnergyConsumption);
 function aggregatedProcessFn(rows, refetch, chartId, dataOptions, columnName) {
     const mapBySensor = {};
     (rows || []).forEach(r => {
@@ -175,11 +173,14 @@ function aggregatedProcessFn(rows, refetch, chartId, dataOptions, columnName) {
     });
 
     // Compute building values
-    const building2Ids = [16, 17, 18];
-    const building2 = building2Ids.reduce((sum, id) => sum + (mapBySensor[id] || 0), 0);
-    const building3 = mapBySensor[19] || 0;
-    const sensor15 = mapBySensor[15] || 0;
-    const building1 = sensor15 - building2;
+    // const building2Ids = [16, 17, 18];
+    // const building2 = building2Ids.reduce((sum, id) => sum + (mapBySensor[id] || 0), 0);
+    // const building3 = mapBySensor[3] || 0;
+    // const sensor15 = mapBySensor[15] || 0;
+    // const building1 = sensor15 - building2;
+    const building1 = mapBySensor[1] || 0;
+    const building2 = mapBySensor[2] || 0;
+    const building3 = mapBySensor[3] || 0;
 
     const aggregatedRows = [
         { label: 'Building 3', daily_consumption: Number(building3.toFixed(2)) },
@@ -271,7 +272,7 @@ const processPandPEnergyConsumptionPerBuilding = () => {
 
 
 
-processPandPEnergyConsumptionPerBuilding();
+// processPandPEnergyConsumptionPerBuilding();
 
 
 // Process for the Previous and Present energy consumption calculation

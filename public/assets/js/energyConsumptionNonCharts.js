@@ -3,7 +3,7 @@ import { createOdometer, formatDate, setIntervalAtFiveMinuteMarks, getStartEndDa
 const DEFAULT_WHERE_IN = [
     {
         field: 'sensor_id',
-        value: [15, 19],
+        value: [1, 2, 3],
     },
 ];
 
