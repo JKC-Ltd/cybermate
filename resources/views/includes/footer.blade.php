@@ -1,6 +1,5 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; {{ date('Y') }} SmartPower Solutions Corporation.</strong>
-    All rights reserved.
+    
 </footer>
 
 <!-- Control Sidebar -->
