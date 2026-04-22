@@ -106,9 +106,9 @@
     </x-slot>
 
     @section('scripts')
-        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-        <script src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.5/odometer.min.js"></script>
+        <script src="{{ asset('assets/js/jquery-1.11.1.min.js')}}"></script>
+        <script src="{{ asset('assets/js/jquery.canvasjs.min.js')}}"></script>
+        <script src="{{ asset('assets/js/odometer.min.js')}}"></script>
         <script type="module" src="{{ asset('assets/js/energyConsumptionNonCharts.js') }}?v={{ time() }}"></script>
         <script type="module" src="{{ asset('assets/js/energyConsumptionCharts.js') }}?v={{ time() }}"></script>
         <script type="module" src="{{ asset('assets/js/energyConsumptionChartsPerBuilding.js') }}?v={{ time() }}"></script>

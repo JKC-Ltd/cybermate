@@ -57,7 +57,8 @@ p {
 
 /* ASIDE */
 .brand-link {
-    background: var(--primary-color);
+    background: #fff;
+
 }
 
 .sidebar {

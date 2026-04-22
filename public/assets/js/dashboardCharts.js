@@ -63,9 +63,10 @@ const processPandPEnergyConsumption = () => {
         groupBy: 'reading_date',
         select: SELECT,
         whereIn: [
-            { field: 'sensor_id', value: [15, 19] },
+            { field: 'sensor_id', value: [1, 2,3] },
         ],
     };
+    // console.log(requestPayload);
 
     const createChartOptions = () => ({
         exportEnabled: true,
@@ -126,7 +127,7 @@ const processDailyEnergyConsumption = () => {
         endDate,
         groupBy: 'sensor_id',
         whereIn: [
-            { field: 'sensor_id', value: [15, 16, 17, 18, 19] },
+            { field: 'sensor_id', value: [1, 2, 3] },
         ],
     };
 
@@ -164,7 +165,7 @@ const processDailyEnergyConsumption = () => {
     charts[CHART_ID] = { options: createChartOptions() };
     fetchData(requestPayload, createSeriesTemplate(), CHART_ID, PROCESS_URL, LABEL_FIELD, aggregatedProcessFn);
 };
-
+// console.log(processDailyEnergyConsumption);
 function aggregatedProcessFn(rows, refetch, chartId, dataOptions, columnName) {
     const mapBySensor = {};
     (rows || []).forEach(r => {
@@ -206,7 +207,7 @@ const processPandPEnergyConsumptionPerBuilding = () => {
 
     const createChartOptions = () => ({
         exportEnabled: true,
-        chartName: 'Previous and Present Energy Consumption - Per Building',
+        chartName: 'Total Previous and Present Energy Consumption',
         chartProps: { request: requestPayload, processUrl: PROCESS_URL },
         animationEnabled: true,
         theme: 'light2',
@@ -267,6 +268,8 @@ const processPandPEnergyConsumptionPerBuilding = () => {
     charts[CHART_ID] = { options: createChartOptions() };
     fetchData(requestPayload, createSeriesTemplate(), CHART_ID, PROCESS_URL, LABEL_FIELD, processPerBuilding);
 };
+
+
 
 processPandPEnergyConsumptionPerBuilding();
 

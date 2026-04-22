@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             UserTypeSeeder::class,
             UserSeeder::class,
             SensorTypeSeeder::class,
-            LocationSeeder::class,
+            // LocationSeeder::class,
             
         ]);
 

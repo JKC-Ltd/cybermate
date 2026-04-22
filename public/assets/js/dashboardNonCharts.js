@@ -51,6 +51,7 @@ const fetchDataNonCharts = (select, startDate, endDate, divId) => {
                 $('#ghgCurrentMonth').css('width', (currentMonth.daily_consumption * 0.512).toFixed(2));
             })
             .fail((err) => console.log(err));
+            console.log('');
     }
 };
 

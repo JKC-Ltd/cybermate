@@ -54,8 +54,8 @@
     </x-slot>
 
     @section('scripts')
-        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-        <script src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
+        <script src="{{ asset('assets/js/jquery-1.11.1.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.canvasjs.min.js') }}"></script>
         <script type="module" src="{{ asset('assets/js/activePower.js') }}?v={{ time() }}"></script>
     @endsection
 </x-app-layout>
