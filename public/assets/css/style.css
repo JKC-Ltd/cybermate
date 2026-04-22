@@ -247,11 +247,10 @@ h1.dashboard-value {
     height: 100%;
     left: 0;
     top: 0;
-    background: url('../images/dashboard-bg.jpg');
+    background: url('../images/dashboard-bg-2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.2;
 }
 
 .energy-bg>* {
