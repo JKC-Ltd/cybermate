@@ -1,8 +1,8 @@
 :root {
-    --primary-color: rgb(24, 74, 161);
-    --light-primary-color-1: rgba(24, 74, 161, 0.6);
-    --light-primary-color-2: #65aadd;
-    --secondary-color: #f39800;
+    --primary-color: rgb(0 124 0);
+    --light-primary-color-1: rgb(116 184 116);
+    --light-primary-color-2: rgb(116 184 116);
+    --secondary-color: rgb(1 40 1);
 }
 
 body {
@@ -29,7 +29,7 @@ p {
 }
 
 .card.card-primary.card-outline {
-    border-top: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--light-primary-color-1);
 }
 
 .card-primary:not(.card-outline)>.card-header {
@@ -63,7 +63,7 @@ p {
 
 .sidebar {
     /* background-image: linear-gradient(to top left, #cc972a, #272971 60%); */
-    background: var(--light-primary-color-1);
+    background: var(--primary-color);
 }
 
 .nav-sidebar .nav-item a p,
@@ -93,7 +93,7 @@ p {
 }
 
 .nav-link.active {
-    background-color: var(--light-primary-color-2) !important;
+    background-color: var(--secondary-color) !important;
     color: #fff;
 }
 
@@ -178,7 +178,7 @@ footer.main-footer {
 .dashboard-card .card-header.ui-sortable-handle {
     display: flex;
     align-items: center;
-    background: #184aa1;
+    background: var(--primary-color);
     color: #fff;
 }
 
@@ -227,7 +227,7 @@ h1.dashboard-value {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #4a8fc2;
+    background: var(--secondary-color);
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -323,7 +323,7 @@ div#tree {
 }
 
 .boc-edit-form-header {
-    background: #184aa1 !important;
+    background: var(--primary-color) !important;
     border-radius: 0px !important;
     padding: 10px !important;
 }
@@ -353,7 +353,7 @@ div#tree {
 
 .boc-form-fieldset .boc-form-field .boc-input label.hasval {
     padding: 12px 20px;
-    color: #184aa1;
+    color: var(--primary-color);
     font-size: 18px;
 }
 

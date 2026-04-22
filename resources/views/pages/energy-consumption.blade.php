@@ -11,7 +11,7 @@
         <div class="row summary-box">
             <div class="col-lg-4 col-12">
                 <!-- small box -->
-                <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
+                <div class="small-box bg-white" style="border-bottom: 8px solid rgb(116 184 116);">
                     <div class="inner">
                         <p>Daily kWh Consumption - All Meters</p>
                         <p class="energy-consumption-date" id="dailyEnergyConsumptionDate"></p>
@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-4 col-12">
                 <!-- small box -->
-                <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
+                <div class="small-box bg-white" style="border-bottom: 8px solid rgb(116 184 116);">
                     <div class="inner">
                         <p>Weekly Consumption - All Meters</p>
                         <p class="energy-consumption-date" id="weeklyEnergyConsumptionDate"></p>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-lg-4 col-12">
                 <!-- small box -->
-                <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
+                <div class="small-box bg-white" style="border-bottom: 8px solid rgb(116 184 116);">
                     <div class="inner">
                         <p>Monthly Consumption - All Meters</p>
                         <p class="energy-consumption-date" id="monthlyEnergyConsumptionDate"></p>

@@ -18,15 +18,27 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-8 col-md-7 col-sm-12" style="padding: 0px;">
                 <div class="login-bg"></div>
             </div>
             <div class="col-lg-4 col-md-5 col-sm-12 login-content">
                 <div class="login-form">
-                    <img src="{{ asset('assets/images/siix-dark-logo.png') }}" class="login-logo">
+                    <img src="{{ asset('assets/images/cybermate-logo.png') }}" class="login-logo">
                     <p>Welcome! Please enter your credentials to access your account.</p>
                     {{ $slot }}
+                </div>
+            </div>
+        </div> --}}
+        <div class="row login">
+            <div class="col-lg-12 col-md-12 col-sm-12 login-container" style="padding: 0px;">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ asset('assets/images/cybermate-logo.png') }}" class="login-logo">
+                        <h3 class="text-center">LOG IN</h3>
+                        <p class="text-center mb-4">Please enter your credentials to access your account.</p>
+                        {{ $slot }}
+                    </div>
                 </div>
             </div>
         </div>

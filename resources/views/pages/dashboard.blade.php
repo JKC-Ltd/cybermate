@@ -9,7 +9,7 @@
         <div class="row summary-box">
             <div class="col-lg-4 col-12">
                 <!-- small box -->
-                <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
+                <div class="small-box bg-white" style="border-bottom: 8px solid rgb(116 184 116);">
                     <div class="inner">
                         <p>Gateways</p>
                         <h3>{{ $gateways->count() }}</h3>
@@ -22,7 +22,7 @@
             <!-- ./col -->
             <div class="col-lg-4 col-12">
                 <!-- small box -->
-                <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
+                <div class="small-box bg-white" style="border-bottom: 8px solid rgb(116 184 116);">
                     <div class="inner">
                         <p>Sensors</p>
                         <h3>{{ $sensors->count() }}</h3>
@@ -35,7 +35,7 @@
             <!-- ./col -->
             <div class="col-lg-4 col-12">
                 <!-- small box -->
-                <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
+                <div class="small-box bg-white" style="border-bottom: 8px solid rgb(116 184 116);">
                     <div class="inner">
                         <p>Areas with Sensors</p>
                         <h3>{{ $area->count() }}</h3>

@@ -1,7 +1,7 @@
 :root {
-    --primary-color: rgb(24, 74, 161);
-    --light-primary-color: #65aadd;
-    --secondary-color: #f39800;
+    --primary-color: rgb(0 124 0);
+    --light-primary-color: rgb(116 184 116);
+    --secondary-color: rgb(1 40 1);
 }
 body {
     background-color: #fff;
@@ -12,42 +12,46 @@ a:hover {
     color: var(--secondary-color);
 }
 .login {
+    background: url("../images/cybermate-bg.jpg");
+    background-position: center;
+    background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 620px;
     margin: auto;
 }
-.login-bg {
-    position: relative;
-    background: url("../images/siix-bg.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-}
-.login-bg::before {
+
+.login::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     top:0;
     left: 0;
-    background-image: linear-gradient(to top left, var(--secondary-color), var(--light-primary-color) 80%);
+    background-image: linear-gradient(0deg, var(--primary-color), transparent 100%);
     opacity: 0.7;
 }
-.login-bg > * {
+.login > * {
     position: relative;
     z-index: 1;
 }
-.login-content {
-    background: url('../images/login-bg.jpg');
-    background-repeat:no-repeat;
-    background-size: cover;    
-    /* background-position: top center; */
+
+.login-container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.login-container .card {
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.login-container .card h3{ 
+    font-size:25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-color);
 }
 .login-form {
     width: 100%;
@@ -67,8 +71,8 @@ a:hover {
     font-size: 18px;
 }
 .login-logo{
-    width: 180px;
-    margin: 0px auto 40px auto;
+    width: 120px;
+    margin: 0px auto 20px auto;
 }
 .login-btn {
     background: var(--primary-color);
