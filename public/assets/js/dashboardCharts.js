@@ -183,9 +183,9 @@ function aggregatedProcessFn(rows, refetch, chartId, dataOptions, columnName) {
     const building3 = mapBySensor[3] || 0;
 
     const aggregatedRows = [
-        { label: 'Building 3', daily_consumption: Number(building3.toFixed(2)) },
-        { label: 'Building 2', daily_consumption: Number(building2.toFixed(2)) },
-        { label: 'Building 1', daily_consumption: Number(building1.toFixed(2)) },
+        { label: 'MTS Meralco', daily_consumption: Number(building1.toFixed(2)) },       
+        { label: 'Main PB B', daily_consumption: Number(building2.toFixed(2)) },
+        { label: 'MDP', daily_consumption: Number(building3.toFixed(2)) },
     ];
 
     processChartData(aggregatedRows, refetch, chartId, dataOptions, 'label');
@@ -208,7 +208,7 @@ const processPandPEnergyConsumptionPerBuilding = () => {
 
     const createChartOptions = () => ({
         exportEnabled: true,
-        chartName: 'Total Previous and Present Energy Consumption',
+        chartName: 'Total Previous and Present Consumption',
         chartProps: { request: requestPayload, processUrl: PROCESS_URL },
         animationEnabled: true,
         theme: 'light2',

@@ -13,7 +13,7 @@
                 <!-- small box -->
                 <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
                     <div class="inner">
-                        <p>Daily kWh Consumption - Total Facility</p>
+                        <p>Daily kWh Consumption - All Meters</p>
                         <p class="energy-consumption-date" id="dailyEnergyConsumptionDate"></p>
                         <h3 id="dailyEnergyConsumption">0</h3>
                         <i>kWh / day</i>
@@ -27,7 +27,7 @@
                 <!-- small box -->
                 <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
                     <div class="inner">
-                        <p>Weekly Consumption - Total Facility</p>
+                        <p>Weekly Consumption - All Meters</p>
                         <p class="energy-consumption-date" id="weeklyEnergyConsumptionDate"></p>
                         <h3 id="weeklyEnergyConsumption">0</h3>
                         <i>kWh / week</i>
@@ -41,7 +41,7 @@
                 <!-- small box -->
                 <div class="small-box bg-white" style="border-bottom: 8px solid #f39800;">
                     <div class="inner">
-                        <p>Monthly Consumption - Total Facility</p>
+                        <p>Monthly Consumption - All Meters</p>
                         <p class="energy-consumption-date" id="monthlyEnergyConsumptionDate"></p>
                         <h3 id="monthlyEnergyConsumption">0</h3>
                         <i>kWh / month</i>
@@ -82,7 +82,7 @@
 
 
 
-        <div class="row">
+        {{-- <div class="row">
             <section class="col-12 connectedSortable">
                 <div class="card">
                     <div class="card-body">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </div> --}}
 
 
         <div class="row">

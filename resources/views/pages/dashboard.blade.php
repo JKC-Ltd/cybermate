@@ -54,7 +54,7 @@
                     <div class="card-header ui-sortable-handle" style="cursor: move;">
                         <h3 class="card-title">
                             <i class="fas fa-plug mr-1"></i>
-                            Previous & Present Energy Consumption - MDP
+                            Total Previous & Present Consumption
                         </h3>
                     </div>
                     <div class="card-body">
