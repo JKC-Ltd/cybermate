@@ -10,9 +10,16 @@ body {
 }
 
 .preloader {
-    background: #c8e8ff;
+    background: #fff;
+    
 }
-
+.preloader img {
+    animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 a.canvasjs-chart-credit {
     display: none !important;
 }

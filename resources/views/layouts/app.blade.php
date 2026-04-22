@@ -13,7 +13,7 @@
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
             {{-- <img class="" src="{{ asset('assets/images/siix-logo.png')}}" alt="Logo" width="200"> --}}
-            <img src="{{ asset('assets/images/loader.gif')}}" alt="Loader" width="100">
+            <img src="{{ asset('assets/images/cybermate-logo.png')}}" alt="Loader" width="150">
         </div>
         @include('includes.navigation')
         @include('includes.aside')
@@ -45,7 +45,7 @@
                 </section>
             @endisset
         </div>
-            @include('includes.footer')
+            {{-- @include('includes.footer') --}}
             @include('includes.script')
             {{-- @isset($importedScripts)
                 {{ $importedScripts }}
