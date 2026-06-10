@@ -3,7 +3,7 @@
         @include('includes.datatables-links')
     </x-slot>
     <x-slot name="pageTitle">
-        Sensors
+        Database Backup
     </x-slot>
     <x-slot name="content">
         <div class="row">
