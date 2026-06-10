@@ -53,6 +53,14 @@
                         </p>
                     </a>
                 </li>
+                  <li class="nav-item">
+                    <a href="{{ route('dbbackup.index') }}" class="nav-link {{ request()->routeIs('dbbackup.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-database"></i>
+                        <p>
+                            Database Backup
+                        </p>
+                    </a>
+                </li>
                 @if (Auth::user()->userType->name== 'Admin')
                 <li class="nav-header">CONFIGURATIONS</li>
                 <li class="nav-item">

@@ -15,6 +15,7 @@ use App\Http\Controllers\VoltageCurrentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DBBackupController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -32,6 +33,10 @@ function registerCommonRoutes()
     Route::resource('energyConsumption', EnergyConsumptionController::class);
     Route::resource('activePower', ActivePowerController::class);
     Route::resource('voltageCurrent', VoltageCurrentController::class);
+    Route::resource('dbbackup', DBBackupController::class);
+    Route::get('dbbackup/download/{name}', [DBBackupController::class, 'download'])
+        ->where('name', '[^/]+')
+        ->name('dbbackup.download');
 
     Route::get('/getSensorType/{id}', [SensorModelController::class, 'getSensorType']);
     Route::get('/getSensorModel/{id}', [SensorModelController::class, 'getSensorModel']);
