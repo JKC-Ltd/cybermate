@@ -12,6 +12,6 @@ Schedule::command('export:sensor-logs')->monthly()->at('09:00');
 
 Schedule::command('app:store-missing-sensor-log')->everyFiveMinutes();
 
-Schedule::command('app:backup-database-csv')->mondays()->at('12:00');
+Schedule::command('app:backup-database-csv')->mondays()->at('00:01');
 
 // Schedule::command('app:backup-database-csv')->everyTwoHours();
