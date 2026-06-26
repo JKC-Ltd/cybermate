@@ -21,7 +21,7 @@ class BackupDatabaseCsv extends Command
      *
      * @var string
      */
-    protected $description = 'Create a CSV backup of all database tables in public/assets/dbbackup.';
+    protected $description = 'Create a CSV backup of the sensor_logs table in public/assets/dbbackup.';
 
     /**
      * Execute the console command.
@@ -35,53 +35,42 @@ class BackupDatabaseCsv extends Command
 
         File::ensureDirectoryExists($backupDirectory);
 
-        $databaseName = DB::getDatabaseName();
-        $tables = DB::select('SHOW TABLES');
+        $tableName = 'sensor_logs';
 
-        if (empty($tables)) {
-            $this->warn('No tables were found in the selected database.');
+        if (!Schema::hasTable($tableName)) {
+            $this->warn("Table not found: {$tableName}");
 
             return self::SUCCESS;
         }
 
-        $tableColumnName = 'Tables_in_' . $databaseName;
+        $csvPath = $backupDirectory . DIRECTORY_SEPARATOR . $tableName . '.csv';
+        $file = fopen($csvPath, 'wb');
 
-        foreach ($tables as $table) {
-            $tableArray = (array) $table;
-            $tableName = $tableArray[$tableColumnName] ?? reset($tableArray);
+        if ($file === false) {
+            $this->error("Unable to write backup file for table: {$tableName}");
 
-            if (!is_string($tableName) || $tableName === '') {
-                continue;
-            }
-
-            $csvPath = $backupDirectory . DIRECTORY_SEPARATOR . $tableName . '.csv';
-            $file = fopen($csvPath, 'wb');
-
-            if ($file === false) {
-                $this->error("Unable to write backup file for table: {$tableName}");
-                continue;
-            }
-
-            $rows = DB::table($tableName)->get();
-
-            if ($rows->isNotEmpty()) {
-                $firstRow = (array) $rows->first();
-                fputcsv($file, array_keys($firstRow));
-
-                foreach ($rows as $row) {
-                    fputcsv($file, array_values((array) $row));
-                }
-            } else {
-                $columns = Schema::getColumnListing($tableName);
-
-                if (!empty($columns)) {
-                    fputcsv($file, $columns);
-                }
-            }
-
-            fclose($file);
-            $this->line("Backed up table: {$tableName}");
+            return self::FAILURE;
         }
+
+        $rows = DB::table($tableName)->get();
+
+        if ($rows->isNotEmpty()) {
+            $firstRow = (array) $rows->first();
+            fputcsv($file, array_keys($firstRow));
+
+            foreach ($rows as $row) {
+                fputcsv($file, array_values((array) $row));
+            }
+        } else {
+            $columns = Schema::getColumnListing($tableName);
+
+            if (!empty($columns)) {
+                fputcsv($file, $columns);
+            }
+        }
+
+        fclose($file);
+        $this->line("Backed up table: {$tableName}");
 
 
         $this->info("Database CSV backup completed: {$backupDirectory}");
